@@ -536,7 +536,9 @@ function rtvideo_get_player( $rtvideo ) {
         'monitordata' => $monitordata,
         'monitorurl' => $CFG->wwwroot . '/mod/rtvideo/ajax/grade_movie.php'
     );
-
+    $jwplayer = new moodle_url('https://ssl.p.jwpcdn.com/player/v/7.7.0/jwplayer');
+    $requirejs = 'require.config({ paths: {\'jwplayer\': \'' . $jwplayer->out() . '\'}})';
+    $PAGE->requires->js_amd_inline($requirejs);
     $PAGE->requires->js_call_amd('mod_rtvideo/rtvideo', 'init', $playersetup);
 
     return $playerdiv;

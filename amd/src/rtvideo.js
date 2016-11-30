@@ -5,7 +5,7 @@
  * @copyright  2016 Refined Data Solutions Inc.
  * @author     Ras Ferdinando
  */
-define(['jquery', 'mod_rtvideo/jwplayer'], function($, player){
+define(['jquery', 'jwplayer'], function($, player){
 
     var rtvideo = {
         //the number of parameters must match what is passed in rtvideo/lib.php
