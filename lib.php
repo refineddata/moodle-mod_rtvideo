@@ -275,7 +275,7 @@ function rtvideo_get_movie_flashvars($courseid, $url) {
 
     $track_url = $CFG->wwwroot . "/mod/rtvideo/grade_movie.php";
 
-    if ($rtvideo = $DB->get_record('rtvideo', array('course' => $courseid, 'url' => $url))) {
+    if ($rtvideo = $DB->get_record('rtvideo', array('course' => $courseid, 'videourl' => $url))) {
         //add_to_log($rtvideo->course, "connect", "movie", "filter.php?id={$rtvideo->id}", $rtvideo->id, $rtvideo->id);
         if (isset($CFG->connect_oldplayer) AND $CFG->connect_oldplayer) {
             return "&track_url={$track_url}&student_id={$USER->id}&activity_id={$rtvideo->id}";
