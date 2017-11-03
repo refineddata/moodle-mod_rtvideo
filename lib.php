@@ -416,6 +416,9 @@ function rtvideo_gradebook_update($rtvideo, $entry) {
             $cmcomp->timemodified = time();
             $DB->insert_record('course_modules_completion', $cmcomp);
         }
+
+        $completioncache = cache::make('core', 'completion');
+        $completioncache->delete($entry->userid . '_' . $cm->course);
     }
     return $sts;
 }
